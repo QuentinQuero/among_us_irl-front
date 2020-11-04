@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router'
-import LoginPage from "@/components/loginModules/Pages/LoginPage";
+import LoginPage from "@/components/unloggedModules/Pages/LoginPage";
+import SignUpPage from "@/components/unloggedModules/Pages/SignUpPage";
+import HomePage from "@/components/homeModule/Pages/HomePage";
 
 Vue.use(Router);
 
@@ -18,6 +20,22 @@ let router = new Router ({
             component: LoginPage,
             meta: {
                 guest: true
+            }
+        },
+        {
+            path: '/signup',
+            name: 'signup',
+            component: SignUpPage,
+            meta: {
+                guest: true
+            }
+        },
+        {
+            path: '/home',
+            name: 'home',
+            component: HomePage,
+            meta: {
+                requiresAuth: true
             }
         }
     ]
