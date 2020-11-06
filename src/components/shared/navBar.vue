@@ -6,8 +6,8 @@
     >
       <!-- First item set -->
       <div class="item-set">
-        <b-nav-item :active="activeRoute === 'home'">Home</b-nav-item>
-        <b-nav-item :active="activeRoute === 'admin'" v-if="userAdmin">Admin Panel</b-nav-item>
+        <b-nav-item :active="activeRoute === 'home'" href="/home">Home</b-nav-item>
+        <b-nav-item :active="activeRoute === 'admin'" v-if="userAdmin" href="/admin">Admin Panel</b-nav-item>
         <b-nav-item :active="activeRoute === 'game'">Game</b-nav-item>
         <b-nav-item :active="activeRoute === 'account'">My Account</b-nav-item>
       </div>
@@ -39,7 +39,11 @@ export default {
     isUserAdmin () {
       userService.isUserAdmin().then((response) => {
         this.userAdmin = response.data;
-      })
+      }).catch(() => {
+        localStorage.removeItem('jwt');
+        localStorage.removeItem('user');
+        self.$router.push('/signup')
+      });
     },
     signOut () {
       // Remove local storage item jwt
