@@ -12,6 +12,13 @@ Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
+// Import and define layouts
+import onlineLayout from "@/layouts/online";
+import offlineLayout from "@/layouts/offline";
+
+Vue.component('online-layout', onlineLayout);
+Vue.component('offline-layout', offlineLayout);
+
 new Vue({
   render: h => h(App),
   router

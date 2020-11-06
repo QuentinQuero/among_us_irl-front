@@ -1,17 +1,20 @@
 <template>
-  <div class="App">
-    <div class="vertical-center">
-      <div class="inner-block">
-        <router-view/>
-      </div>
-    </div>
+  <div id="app">
+    <component :is="layout">
+      <router-view/>
+    </component>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'App'
+  name: 'App',
+  computed: {
+    layout() {
+      return (this.$route.meta.layout.name || 'offline') + '-layout'
+    }
+  }
 }
 </script>
 
