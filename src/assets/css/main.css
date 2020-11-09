@@ -15,3 +15,7 @@ html,
     height: 100vh;
     background-color: white;
 }
+
+.modal-body {
+    padding: 0 !important;
+}

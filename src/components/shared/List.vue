@@ -1,13 +1,20 @@
 <template>
   <div>
-    <b-table show-empty striped hover :items="data" :fields="columns">
-      <template slot="top-row" slot-scope="{columns}">
+    <b-table
+        show-empty
+        striped
+        hover
+        :items="data"
+        :fields="fields"
+    >
+      <template slot="top-row">
         <td v-for="column in columns" :key="column.name">
-          <input
-            v-if="column.filtrable"
+          <b-form-input
+            v-if="column.filterable"
             v-model="filters[column.name]"
             :placeholder="column.label"
-          />
+          >
+          </b-form-input>
         </td>
       </template>
     </b-table>
@@ -21,7 +28,8 @@ export default {
   props: ['data', 'columns'],
   data () {
     return {
-      filters: {}
+      filters: {},
+      fields: []
     }
   },
   watch: {
@@ -36,6 +44,14 @@ export default {
       },
       deep: true
     }
+  },
+  mounted () {
+    this.columns.forEach((field) => {
+      this.fields.push({
+        key: field.name,
+        sortable: field.sortable
+      });
+    });
   }
 }
 </script>

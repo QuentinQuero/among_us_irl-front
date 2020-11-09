@@ -17,7 +17,7 @@ const searchConfigurations = function (filters, pagination, sort) {
             },
             url: `${config.backUrl}/configurations/search`
         }).then((response) => {
-            resolve(response);
+            resolve(response.data);
         }).catch((error) => {
             reject(error);
         });

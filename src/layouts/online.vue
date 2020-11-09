@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import NavBar from "@/components/shared/navBar";
+import NavBar from "@/components/shared/NavBar";
 export default {
 name: "online",
   components: {NavBar}
