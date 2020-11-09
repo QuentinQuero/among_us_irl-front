@@ -17,7 +17,7 @@
 <script>
 let timerWatch = null
 export default {
-  name: "list",
+  name: "List",
   props: ['data', 'columns'],
   data () {
     return {
