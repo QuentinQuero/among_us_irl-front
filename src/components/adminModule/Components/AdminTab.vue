@@ -6,7 +6,7 @@
           <configuration-tab/>
         </b-tab>
         <b-tab title="Games">
-          <b-card-text>Coming soon</b-card-text>
+          <games-tab/>
         </b-tab>
         <b-tab title="Players">
           <b-card-text>Coming soon</b-card-text>
@@ -18,9 +18,10 @@
 
 <script>
 import ConfigurationTab from "@/components/adminModule/Components/Tabs/ConfigurationTab";
+import GamesTab from "@/components/adminModule/Components/Tabs/GamesTab";
 export default {
 name: "AdminTab",
-  components: {ConfigurationTab}
+  components: {GamesTab, ConfigurationTab}
 }
 </script>
 

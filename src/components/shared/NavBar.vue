@@ -42,7 +42,7 @@ export default {
       }).catch(() => {
         localStorage.removeItem('jwt');
         localStorage.removeItem('user');
-        self.$router.push('/signup')
+        this.$router.push('/signup')
       });
     },
     signOut () {

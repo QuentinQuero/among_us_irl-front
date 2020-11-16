@@ -3,6 +3,7 @@
     <list
       :columns="columns"
       :data="data"
+      :sortOrder="[{field: 'name', sortField: 'name', direction: 'asc'}]"
       v-on:filerChange="filterChange"
     />
     <div class="row justify-content-center">
@@ -20,13 +21,14 @@ export default {
   data () {
     return {
       columns: [
-        {name: 'name', type: 'String', filterable: true, sortable: true, label: 'Configuration name'},
-        {name: 'cooldown', type: 'number', filterable: true, sortable: true, label: 'Impostor cooldown'},
-        {name: 'nbPlayers', type: 'number', filterable: true, sortable: true, label: 'Max total game player number'},
-        {name: 'nbImposter', type: 'number', filterable: true, sortable: true, label: 'Imposter number'},
-        {name: 'nbShortMissions', type: 'number', filterable: true, sortable: true, label: 'NB short missions'},
-        {name: 'nbNormalMissions', type: 'number', filterable: true, sortable: true, label: 'NB normal missions'},
-        {name: 'nbLongMissions', type: 'number', filterable: true, sortable: true, label: 'NB long missions'}
+        {name: 'name', type: 'String', filterable: true, sortable: true, title: 'Configuration name'},
+        {name: 'cooldown', type: 'number', filterable: true, sortable: true, title: 'Impostor cooldown'},
+        {name: 'nbPlayers', type: 'number', filterable: true, sortable: true, title: 'Max total game player number'},
+        {name: 'nbImposter', type: 'number', filterable: true, sortable: true, title: 'Imposter number'},
+        {name: 'nbShortMissions', type: 'number', filterable: true, sortable: true, title: 'NB short missions'},
+        {name: 'nbNormalMissions', type: 'number', filterable: true, sortable: true, title: 'NB normal missions'},
+        {name: 'nbLongMissions', type: 'number', filterable: true, sortable: true, title: 'NB long missions'},
+        'actions'
       ],
       data: [],
       filters: {},

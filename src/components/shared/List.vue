@@ -1,35 +1,68 @@
 <template>
   <div>
-    <b-table
-        show-empty
-        striped
-        hover
-        :items="data"
-        :fields="fields"
+    <vuetable
+        ref="vuetable"
+        :api-mode="false"
+        :fields="columns"
+        pagination-path=""
+        :data="data"
+        :per-page="5"
+        :sort-order="sortOrder"
+        @vuetable:pagination-data="onPaginationData"
+        @vuetable:loading="onLoading"
+        @vuetable:loaded="onLoaded"
     >
-      <template slot="top-row">
-        <td v-for="column in columns" :key="column.name">
-          <b-form-input
-            v-if="column.filterable"
-            v-model="filters[column.name]"
-            :placeholder="column.label"
+      <template slot="actions" slot-scope="props">
+        <div class="row justify-content-around">
+          <b-button
+              variant="warning"
+              style="color: white"
+              v-on:click="editRow(props.rowData)"
           >
-          </b-form-input>
-        </td>
+            Edit
+          </b-button>
+          <b-button
+              variant="danger"
+              v-on:click="deleteRow(props.rowData)"
+          >
+            Delete
+          </b-button>
+        </div>
       </template>
-    </b-table>
+    </vuetable>
   </div>
 </template>
 
 <script>
+import Vuetable from 'vuetable-2'
 let timerWatch = null
 export default {
   name: "List",
-  props: ['data', 'columns'],
+  props: ['data', 'columns', 'pagination', 'sortOrder'],
+  components: {
+    Vuetable
+  },
   data () {
     return {
       filters: {},
-      fields: []
+      perPage: 3,
+    }
+  },
+  methods: {
+    onPaginationData () {
+      console.log('PaginationData')
+    },
+    onLoading () {
+      console.log('onLoading')
+    },
+    onLoaded () {
+      console.log('onLoaded')
+    },
+    editRow (rowData) {
+      console.log(rowData);
+    },
+    deleteRow (rowData) {
+      console.log(rowData)
     }
   },
   watch: {
@@ -44,14 +77,6 @@ export default {
       },
       deep: true
     }
-  },
-  mounted () {
-    this.columns.forEach((field) => {
-      this.fields.push({
-        key: field.name,
-        sortable: field.sortable
-      });
-    });
   }
 }
 </script>
