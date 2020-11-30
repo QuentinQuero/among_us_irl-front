@@ -25,10 +25,11 @@
           <!-- Game configurations -->
           <b-form-group
               id="configuration-group"
-              label="Game access Code"
-              label-for="accessCode-input"
+              label="Game configuration"
+              label-for="configuration-select"
           >
             <b-form-select
+                id="configuration-select"
                 v-model="configurationId"
                 :options="configurations"
             >
