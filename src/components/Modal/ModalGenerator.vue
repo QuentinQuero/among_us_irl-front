@@ -6,15 +6,17 @@
   >
     <div class="modal-body">
       <create-config-modal v-if="modalToOpen === 'createConfig'"/>
+      <create-game-modal v-if="modalToOpen === 'createGame'"/>
     </div>
   </b-modal>
 </template>
 
 <script>
 import CreateConfigModal from "@/components/Modal/Modals/CreateConfigModal";
+import CreateGameModal from "@/components/Modal/Modals/CreateGameModal";
 export default {
   name: "ModalGenerator",
-  components: {CreateConfigModal},
+  components: {CreateGameModal, CreateConfigModal},
   data () {
     return {
       modalToOpen: '',

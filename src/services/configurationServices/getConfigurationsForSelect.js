@@ -10,9 +10,9 @@ const getConfigurationsForSelect = function () {
             headers: {
                 authorization: 'Bearer ' + localStorage.getItem('jwt')
             },
-            url: `${config.backUrl}/configurations/getConfigurationForSelect`
+            url: `${config.backUrl}/configurations/forSelect`
         }).then((response) => {
-            resolve(response.data);
+            resolve(response.data.data);
         }).catch((error) => {
             reject(error);
         })

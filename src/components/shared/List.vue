@@ -50,13 +50,13 @@ export default {
   },
   methods: {
     onPaginationData () {
-      console.log('PaginationData')
+      // console.log('PaginationData')
     },
     onLoading () {
-      console.log('onLoading')
+      // console.log('onLoading')
     },
     onLoaded () {
-      console.log('onLoaded')
+      // console.log('onLoaded')
     },
     editRow (rowData) {
       console.log(rowData);

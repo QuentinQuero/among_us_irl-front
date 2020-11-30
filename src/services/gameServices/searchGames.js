@@ -1,7 +1,7 @@
 'use strict';
 
 const axios = require('axios');
-const config = require('../../config/default.json');
+const config = require('@/config/default.json');
 
 const searchGames = function (filters, pagination, sort) {
     return new Promise((resolve, reject) => {

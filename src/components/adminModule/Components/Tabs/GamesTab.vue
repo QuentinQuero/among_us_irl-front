@@ -21,7 +21,8 @@ export default {
       columns: [
         {name: 'accessCode', type: 'String', filterable: true, sortable: true, title: 'Game Access Code'},
         {name: 'status', type: 'String', filterable: true, sortable: true, title: 'Status'},
-        {name: 'configurationName', type: 'String', filterable: true, sortable: true, title: 'Configuration Name'}
+        {name: 'configurations.name', type: 'String', filterable: true, sortable: true, title: 'Configuration Name'},
+        'actions'
       ],
       data: [],
       filters: {},
