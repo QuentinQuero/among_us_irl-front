@@ -3,7 +3,9 @@ import Router from 'vue-router'
 import LoginPage from "@/components/unloggedModules/Pages/LoginPage";
 import SignUpPage from "@/components/unloggedModules/Pages/SignUpPage";
 import HomePage from "@/components/homeModule/Pages/HomePage";
-
+import online from "@/layouts/online";
+import offline from "@/layouts/offline";
+import AdminPage from "@/components/adminModule/Pages/AdminPage";
 Vue.use(Router);
 
 // Define all routes
@@ -19,6 +21,7 @@ let router = new Router ({
             name: 'login',
             component: LoginPage,
             meta: {
+                layout: offline,
                 guest: true
             }
         },
@@ -27,6 +30,7 @@ let router = new Router ({
             name: 'signup',
             component: SignUpPage,
             meta: {
+                layout: offline,
                 guest: true
             }
         },
@@ -35,7 +39,18 @@ let router = new Router ({
             name: 'home',
             component: HomePage,
             meta: {
+                layout: online,
                 requiresAuth: true
+            }
+        },
+        {
+            path: '/admin',
+            name: 'admin',
+            component: AdminPage,
+            meta: {
+                layout: online,
+                requiresAuth: true,
+                is_admin: true
             }
         }
     ]
@@ -49,13 +64,11 @@ router.beforeEach((to, from, next) => {
                 params: { nextUrl: to.fullPath }
             })
         } else {
-            let user = JSON.parse(localStorage.getItem('user'))
             if(to.matched.some(record => record.meta.is_admin)) {
-                if(user.is_admin === 1){
-                    next()
-                }
-                else{
-                    next({ name: 'userboard'})
+                if (localStorage.getItem('userRole') === 'admin') {
+                    next();
+                } else {
+                    next({name: 'home'});
                 }
             }else {
                 next()
@@ -66,7 +79,7 @@ router.beforeEach((to, from, next) => {
             next()
         }
         else{
-            next({ name: 'userboard'})
+            next({ name: 'home'})
         }
     }else {
         next()

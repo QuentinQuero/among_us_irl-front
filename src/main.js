@@ -10,9 +10,20 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
-Vue.use(IconsPlugin)
+Vue.use(IconsPlugin);
+
+// Import and define layouts
+import onlineLayout from "@/layouts/online";
+import offlineLayout from "@/layouts/offline";
+import VueTable from "vuetable-2";
+
+Vue.component('online-layout', onlineLayout);
+Vue.component('offline-layout', offlineLayout);
 
 new Vue({
   render: h => h(App),
-  router
+  router,
+  components: {
+    'vuetable-pagination': VueTable.VuetablePagination
+  }
 }).$mount('#app')
