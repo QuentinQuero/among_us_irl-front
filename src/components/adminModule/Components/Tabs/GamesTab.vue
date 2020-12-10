@@ -3,6 +3,7 @@
     <list
       :columns="columns"
       :data="data"
+      v-on:changeStatus="updateGameStatus($event)"
     />
     <div class="row justify-content-center">
       <b-button v-on:click="addGame">{{ $t('actions.add_game') }}</b-button>
@@ -45,6 +46,11 @@ export default {
     filterChange ($event) {
       this.filters = $event
       this.loadData();
+    },
+    updateGameStatus ($event) {
+      gameServices.changeGameStatus($event).then(() => {
+        this.loadData();
+      });
     }
   },
   mounted () {
