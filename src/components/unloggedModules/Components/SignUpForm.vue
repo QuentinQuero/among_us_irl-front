@@ -1,10 +1,10 @@
 <template>
   <div class="vue-tempalte">
     <form>
-      <h3>Sign Up</h3>
+      <h3>{{ $t("pages.title.sign_up") }}</h3>
 
       <div class="form-group">
-        <label>Email address</label>
+        <label>{{ $t('forms.email_address') }}</label>
         <input
             v-model="email"
             type="email"
@@ -14,7 +14,7 @@
       </div>
 
       <div class="form-group">
-        <label>Password</label>
+        <label>{{ $t('forms.password') }}</label>
         <input
             v-model="password"
             type="password"
@@ -23,7 +23,7 @@
       </div>
 
       <div class="form-group">
-        <label>Confirm your password</label>
+        <label>{{ $t('forms.confirm_password') }}</label>
         <input
             v-model="confirmPassword"
             type="password"
@@ -37,11 +37,11 @@
           type="submit"
           class="btn btn-dark btn-lg btn-block"
       >
-        Sign Up
+        {{ $t('actions.sign_up') }}
       </button>
       <p class="forgot-password text-right">
-        Already registered
-        <router-link :to="{name: 'login'}">sign in?</router-link>
+        {{ $t('messages.already_registred') }}
+        <router-link :to="{name: 'login'}">{{ $t('messages.sign_in') }} ?</router-link>
       </p>
     </form>
     <b-alert
@@ -52,7 +52,7 @@
         @dismissed="dismissCountDown=0"
         @dismiss-count-down="countDownChanged"
     >
-      <h4>{{alertMessage}}</h4>
+      <h4>{{ $t(alertMessage) }}</h4>
       <b-progress
           :variant="alertType"
           :max="dismissSecs"
@@ -90,7 +90,7 @@ export default {
         this.isUsed = response.isUsed;
         // Display error if mail is used
         if (this.isUsed) {
-          this.alertMessage = 'Email address is already used';
+          this.alertMessage = 'errors.email_already_used';
           this.alertType = 'danger'
           this.dismissCountDown = this.dismissSecs;
         }
@@ -99,13 +99,13 @@ export default {
     signup () {
       userService.signup(this.email, this.password, this.confirmPassword)
       .then((response) => {
-        this.alertMessage = 'Account created';
+        this.alertMessage = 'messages.account_created';
         this.alertType = 'success'
         this.dismissCountDown = this.dismissSecs;
         console.log(response)
       })
       .catch((error) => {
-        this.alertMessage = 'Error in account creation';
+        this.alertMessage = 'errors.account_creation';
         this.alertType = 'danger'
         this.dismissCountDown = this.dismissSecs;
         console.log(error)

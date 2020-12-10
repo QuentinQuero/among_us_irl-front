@@ -2,13 +2,13 @@
   <div>
     <b-card no-body>
       <b-tabs card>
-        <b-tab title="Configurations" active>
+        <b-tab :title="$t('tabs.configurations')" active>
           <configuration-tab/>
         </b-tab>
-        <b-tab title="Games">
+        <b-tab :title="$t('tabs.games')">
           <games-tab/>
         </b-tab>
-        <b-tab title="Players">
+        <b-tab :title="$t('tabs.players')">
           <b-card-text>Coming soon</b-card-text>
         </b-tab>
       </b-tabs>

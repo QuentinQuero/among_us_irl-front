@@ -1,0 +1,82 @@
+{
+  "pages":{
+    "title": {
+      "sign_in": "Connexion",
+      "sign_up": "Créer un compte"
+    },
+    "nav_bar": {
+      "home": "Acceuil",
+      "admin_panel": "Panneau d'administration",
+      "games": "Parties",
+      "my_account": "Mon compte",
+      "options": "Options"
+    }
+  },
+  "forms": {
+    "email_address": "Adresse mail",
+    "password": "Mot de passe",
+    "confirm_password": "Confirmation du mot de passe",
+    "configurations": {
+      "create": "Créer un configuration de partie",
+      "name": "Nom de la configuration",
+      "players": "Nombre de joueurs : ",
+      "imposters": "Nombre d'imposteurs : ",
+      "cooldown": "Cooldown d'imposteur : ",
+      "short_missions": "Nombre de missions courtes : ",
+      "normal_missions": "Nombre de missions normales : ",
+      "long_missions": "Nombre de missions longues : "
+    },
+    "games": {
+      "create": "Création d'une partie",
+      "access_code": "Code d'accès de la partie",
+      "configuration": "Sélection de la configuration de la partie"
+    }
+  },
+  "actions": {
+    "sign_in": "Se connecter",
+    "sign_up": "Créer un compte",
+    "sign_out": "Se déconnecter",
+    "add_configuration": "Ajouter une configuration",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "add_game": "Créer une partie",
+    "cancel": "Annuler",
+    "create": "Créer"
+  },
+  "errors": {
+    "invalid_credentials": "Informations de connexion invalides",
+    "email_already_used": "Addresse email déjà utilisée",
+    "account_creation": "Une erreure est survenue dans la création de votre compte"
+  },
+  "messages": {
+    "already_registred": "Déjà un compte",
+    "sign_in": "se connecter",
+    "account_created": "Votre compte à été crée"
+  },
+  "tabs": {
+    "configurations": "Configurations",
+    "games": "Parties",
+    "players": "Joueurs"
+  },
+  "list_label": {
+    "actions": "Actions",
+    "configurations": {
+      "name": "Nom",
+      "cooldown": "Cooldown imposteur",
+      "players": "NB joueurs max",
+      "imposters": "NB imposteurs",
+      "short_missions": "NB missions courtes",
+      "normal_missions": "NB mission normales",
+      "long_missions": "NB missions longues"
+    },
+    "games": {
+      "access_code": "Code accès",
+      "status": "Status de la partie",
+      "configuration_name": "Nom de la configuration"
+    }
+  },
+  "placeholders": {
+    "configuration_name": "Entrez le nom de configuration",
+    "game_access_code": "Entrez le code d'accès de la partie"
+  }
+}

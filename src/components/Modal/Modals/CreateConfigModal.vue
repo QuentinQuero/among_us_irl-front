@@ -2,7 +2,7 @@
   <div>
     <b-card
         border-variant="primary"
-        header="Create game configurations"
+        :header="$t('forms.configurations.create')"
         header-bg-variant="primary"
         header-text-variant="white"
     >
@@ -11,7 +11,7 @@
           <!-- Configuration name -->
           <b-form-group
             id="name-group"
-            label="Configuration name:"
+            :label="$t('forms.configurations.name')"
             label-for="name-input"
           >
             <b-form-input
@@ -19,7 +19,7 @@
               v-model="name"
               type="text"
               required
-              placeholder="Enter configuration name"
+              :placeholder="$t('placeholders.configuration_name')"
             ></b-form-input>
           </b-form-group>
           <div class="row">
@@ -27,7 +27,7 @@
               <!-- Player number -->
               <b-form-group
                   id="nbPlayers-group"
-                  :label="'Player number for the game: ' + nbPlayer"
+                  :label="$t('forms.configurations.players') + nbPlayer"
                   label-for="nbPlayer-input"
               >
                 <b-form-input
@@ -41,7 +41,7 @@
               <!-- Imposter number -->
               <b-form-group
                   id="nbImposter-group"
-                  :label="'Imposter number for the game: ' + nbImposter"
+                  :label="$t('forms.configurations.imposters') + nbImposter"
                   label-for="nbImposter-input"
               >
                 <b-form-input
@@ -55,7 +55,7 @@
               <!-- Cooldown -->
               <b-form-group
                   id="cooldown-group"
-                  :label="'Cooldown for imposter task: ' + cooldown"
+                  :label="$t('forms.configurations.cooldown') + cooldown"
                   label-for="cooldown-input"
               >
                 <b-form-input
@@ -71,7 +71,7 @@
               <!-- Short mission number -->
               <b-form-group
                   id="nbShortMission-group"
-                  :label="'Short mission number for the game: ' + nbShortMissions"
+                  :label="$t('forms.configurations.short_missions') + nbShortMissions"
                   label-for="nbShortMission-input"
               >
                 <b-form-input
@@ -85,7 +85,7 @@
               <!-- Normal mission number -->
               <b-form-group
                   id="nbNormalMission-group"
-                  :label="'Normal mission number for the game: ' + nbNormalMissions"
+                  :label="$t('forms.configurations.normal_missions') + nbNormalMissions"
                   label-for="nbNormalMission-input"
               >
                 <b-form-input
@@ -99,7 +99,7 @@
               <!-- Long mission number -->
               <b-form-group
                   id="nbLongMission-group"
-                  :label="'Long mission number for the game: ' + nbLongMissions"
+                  :label="$t('forms.configurations.long_missions') + nbLongMissions"
                   label-for="nbLongMission-input"
               >
                 <b-form-input
@@ -115,8 +115,8 @@
         </b-form>
       </b-card-body>
       <b-card-footer class="row justify-content-between">
-        <b-button variant="danger" v-on:click="cancel">Cancel</b-button>
-        <b-button variant="primary" v-on:click="create">Create</b-button>
+        <b-button variant="danger" v-on:click="cancel">{{ $t('actions.cancel') }}</b-button>
+        <b-button variant="primary" v-on:click="create">{{ $t('actions.create') }}</b-button>
       </b-card-footer>
     </b-card>
   </div>

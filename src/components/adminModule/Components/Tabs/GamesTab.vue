@@ -5,7 +5,7 @@
       :data="data"
     />
     <div class="row justify-content-center">
-      <b-button v-on:click="addGame">Add Game</b-button>
+      <b-button v-on:click="addGame">{{ $t('actions.add_game') }}</b-button>
     </div>
   </div>
 </template>
@@ -19,9 +19,9 @@ export default {
   data () {
     return {
       columns: [
-        {name: 'accessCode', type: 'String', filterable: true, sortable: true, title: 'Game Access Code'},
-        {name: 'status', type: 'String', filterable: true, sortable: true, title: 'Status'},
-        {name: 'configurations.name', type: 'String', filterable: true, sortable: true, title: 'Configuration Name'},
+        {name: 'accessCode', type: 'String', filterable: true, sortable: true, title: this.$t('list_label.games.access_code') },
+        {name: 'status', type: 'String', filterable: true, sortable: true, title: this.$t('list_label.games.status') },
+        {name: 'configurations.name', type: 'String', filterable: true, sortable: true, title: this.$t('list_label.games.configuration_name') },
         'actions'
       ],
       data: [],
