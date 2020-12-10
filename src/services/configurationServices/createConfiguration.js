@@ -9,7 +9,7 @@ const createConfiguration = function (name, nbPlayers, nbImposter, cooldown, nbS
            method: 'post',
            url: `${config.backUrl}/configurations/create`,
            headers: {
-               authorization: 'Bearer ' + localStorage.getItem('jwt')
+               authorization: 'Bearer ' + sessionStorage.getItem('jwt')
            },
            data: {
                name: name,

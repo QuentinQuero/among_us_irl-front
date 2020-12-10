@@ -8,7 +8,7 @@ const getConfigurationById = function (id) {
        axios({
            method: 'get',
            headers: {
-               authorization: 'Bearer ' + localStorage.getItem('jwt')
+               authorization: 'Bearer ' + sessionStorage.getItem('jwt')
            },
            url: `${config.backUrl}/configurations/${id}`
        }).then((response) => {

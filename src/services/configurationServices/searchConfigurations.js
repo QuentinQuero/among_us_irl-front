@@ -8,7 +8,7 @@ const searchConfigurations = function (filters, pagination, sort) {
         axios({
             method: 'get',
             headers: {
-                authorization: 'Bearer ' + localStorage.getItem('jwt')
+                authorization: 'Bearer ' + sessionStorage.getItem('jwt')
             },
             params: {
                 filters: filters,

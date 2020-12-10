@@ -40,14 +40,14 @@ export default {
       userService.isUserAdmin().then((response) => {
         this.userAdmin = response.data;
       }).catch(() => {
-        localStorage.removeItem('jwt');
-        localStorage.removeItem('user');
+        sessionStorage.removeItem('jwt');
+        sessionStorage.removeItem('user');
         this.$router.push('/signup')
       });
     },
     signOut () {
       // Remove local storage item jwt
-      localStorage.removeItem('jwt')
+      sessionStorage.removeItem('jwt')
       // Change route
       this.$router.push('/')
     }

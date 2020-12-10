@@ -58,14 +58,14 @@ let router = new Router ({
 
 router.beforeEach((to, from, next) => {
     if(to.matched.some(record => record.meta.requiresAuth)) {
-        if (localStorage.getItem('jwt') == null) {
+        if (sessionStorage.getItem('jwt') == null) {
             next({
                 path: '/login',
                 params: { nextUrl: to.fullPath }
             })
         } else {
             if(to.matched.some(record => record.meta.is_admin)) {
-                if (localStorage.getItem('userRole') === 'admin') {
+                if (sessionStorage.getItem('userRole') === 'admin') {
                     next();
                 } else {
                     next({name: 'home'});
@@ -75,7 +75,7 @@ router.beforeEach((to, from, next) => {
             }
         }
     } else if(to.matched.some(record => record.meta.guest)) {
-        if(localStorage.getItem('jwt') == null){
+        if(sessionStorage.getItem('jwt') == null){
             next()
         }
         else{

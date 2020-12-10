@@ -9,7 +9,7 @@ const isUserAdmin = function () {
             method: 'get',
             url: `${config.backUrl}/users/isAdmin`,
             headers: {
-                authorization: 'Bearer ' + localStorage.getItem('jwt')
+                authorization: 'Bearer ' + sessionStorage.getItem('jwt')
             }
         }).then((response) => {
             resolve(response.data);
