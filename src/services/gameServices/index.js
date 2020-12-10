@@ -2,5 +2,6 @@
 
 module.exports = {
     'searchGames': require('./searchGames'),
-    'createGame': require('./createGame')
+    'createGame': require('./createGame'),
+    'changeGameStatus': require('./changeGameStatus')
 }

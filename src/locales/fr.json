@@ -41,7 +41,10 @@
     "delete": "Supprimer",
     "add_game": "Créer une partie",
     "cancel": "Annuler",
-    "create": "Créer"
+    "create": "Créer",
+    "launch_game": "Lancer la partie",
+    "stop_game": "Arrêter la partie",
+    "reset_game": "Reset la partie"
   },
   "errors": {
     "invalid_credentials": "Informations de connexion invalides",

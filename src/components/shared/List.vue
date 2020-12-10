@@ -12,6 +12,38 @@
         @vuetable:loading="onLoading"
         @vuetable:loaded="onLoaded"
     >
+      <template slot="status" slot-scope="props">
+        <div class="row justify-content-around">
+          {{ props.rowData.status }}
+          <div v-if="props.rowData.status === 'init'">
+            <b-button
+                variant="success"
+                @click="updateGameStatus(props.rowData._id)"
+            >
+              {{ $t('actions.launch_game') }}
+            </b-button>
+          </div>
+          <div v-else-if="props.rowData.status === 'inGame'">
+            <b-button
+                variant="warning"
+                style="color: white"
+                @click="updateGameStatus(props.rowData._id)"
+            >
+              {{ $t('actions.stop_game') }}
+            </b-button>
+          </div>
+          <div v-else-if="props.rowData.status === 'finished'">
+            <b-button
+                variant="danger"
+                style="color: white"
+                @click="updateGameStatus(props.rowData._id)"
+            >
+              {{ $t('actions.reset_game') }}
+            </b-button>
+          </div>
+        </div>
+      </template>
+
       <template slot="actions" slot-scope="props">
         <div class="row justify-content-around">
           <b-button
@@ -63,6 +95,9 @@ export default {
     },
     deleteRow (rowData) {
       console.log(rowData)
+    },
+    updateGameStatus (gameId) {
+      this.$emit('changeStatus', gameId);
     }
   },
   watch: {
