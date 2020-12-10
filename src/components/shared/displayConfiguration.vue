@@ -1,12 +1,12 @@
 <template>
     <ul class="displayConfiguration">
-      <li>Cooldown: {{configuration.cooldown}}</li>
-      <li>Players number: {{configuration.nbPlayers}}</li>
-      <li>Number short missions: {{configuration.nbShortMissions}}</li>
-      <li>Number normal missions: {{configuration.nbNormalMissions}}</li>
-      <li>Number Long missions: {{configuration.nbLongMissions}}</li>
-      <li>Number imposter: {{configuration.nbImposter}}</li>
-      <li>Name: {{configuration.name}}</li>
+      <li>{{ $t('list_label.configurations.name') }} : {{configuration.name}}</li>
+      <li>{{ $t('list_label.configurations.cooldown') }} : {{configuration.cooldown}}</li>
+      <li>{{ $t('list_label.configurations.players') }} : {{configuration.nbPlayers}}</li>
+      <li>{{ $t('list_label.configurations.imposters') }} : {{configuration.nbShortMissions}}</li>
+      <li>{{ $t('list_label.configurations.short_missions') }} : {{configuration.nbNormalMissions}}</li>
+      <li>{{ $t('list_label.configurations.normal_missions') }} : {{configuration.nbLongMissions}}</li>
+      <li>{{ $t('list_label.configurations.long_missions') }} : {{configuration.nbImposter}}</li>
     </ul>
 </template>
 

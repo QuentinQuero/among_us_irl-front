@@ -7,7 +7,7 @@
       v-on:filerChange="filterChange"
     />
     <div class="row justify-content-center">
-      <b-button v-on:click="addConfiguration">Add Configuration</b-button>
+      <b-button v-on:click="addConfiguration">{{ $t('actions.add_configuration') }}</b-button>
     </div>
   </div>
 </template>
@@ -21,13 +21,13 @@ export default {
   data () {
     return {
       columns: [
-        {name: 'name', type: 'String', filterable: true, sortable: true, title: 'Configuration name'},
-        {name: 'cooldown', type: 'number', filterable: true, sortable: true, title: 'Impostor cooldown'},
-        {name: 'nbPlayers', type: 'number', filterable: true, sortable: true, title: 'Max total game player number'},
-        {name: 'nbImposter', type: 'number', filterable: true, sortable: true, title: 'Imposter number'},
-        {name: 'nbShortMissions', type: 'number', filterable: true, sortable: true, title: 'NB short missions'},
-        {name: 'nbNormalMissions', type: 'number', filterable: true, sortable: true, title: 'NB normal missions'},
-        {name: 'nbLongMissions', type: 'number', filterable: true, sortable: true, title: 'NB long missions'},
+        { name: 'name', type: 'String', filterable: true, sortable: true, title: this.$t('list_label.configurations.name') },
+        { name: 'cooldown', type: 'number', filterable: true, sortable: true, title: this.$t('list_label.configurations.cooldown') },
+        { name: 'nbPlayers', type: 'number', filterable: true, sortable: true, title: this.$t('list_label.configurations.players') },
+        { name: 'nbImposter', type: 'number', filterable: true, sortable: true, title: this.$t('list_label.configurations.imposters') },
+        { name: 'nbShortMissions', type: 'number', filterable: true, sortable: true, title: this.$t('list_label.configurations.short_missions') },
+        { name: 'nbNormalMissions', type: 'number', filterable: true, sortable: true, title: this.$t('list_label.configurations.normal_missions') },
+        { name: 'nbLongMissions', type: 'number', filterable: true, sortable: true, title: this.$t('list_label.configurations.long_missions') },
         'actions'
       ],
       data: [],

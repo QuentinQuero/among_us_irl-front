@@ -19,13 +19,13 @@
               style="color: white"
               v-on:click="editRow(props.rowData)"
           >
-            Edit
+            {{ $t('actions.edit') }}
           </b-button>
           <b-button
               variant="danger"
               v-on:click="deleteRow(props.rowData)"
           >
-            Delete
+            {{ $t('actions.delete') }}
           </b-button>
         </div>
       </template>

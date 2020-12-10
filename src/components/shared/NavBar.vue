@@ -6,18 +6,18 @@
     >
       <!-- First item set -->
       <div class="item-set">
-        <b-nav-item :active="activeRoute === 'home'" href="/home">Home</b-nav-item>
-        <b-nav-item :active="activeRoute === 'admin'" v-if="userAdmin" href="/admin">Admin Panel</b-nav-item>
-        <b-nav-item :active="activeRoute === 'game'">Game</b-nav-item>
-        <b-nav-item :active="activeRoute === 'account'">My Account</b-nav-item>
+        <b-nav-item :active="activeRoute === 'home'" href="/home">{{ $t('pages.nav_bar.home') }}</b-nav-item>
+        <b-nav-item :active="activeRoute === 'admin'" v-if="userAdmin" href="/admin">{{ $t('pages.nav_bar.admin_panel') }}</b-nav-item>
+        <b-nav-item :active="activeRoute === 'game'">{{ $t('pages.nav_bar.games') }}</b-nav-item>
+        <b-nav-item :active="activeRoute === 'account'">{{ $t('pages.nav_bar.my_account') }}</b-nav-item>
       </div>
       <b-nav-dropdown
         id="nav-dropdown"
-        text="Options"
+        :text="$t('pages.nav_bar.options')"
         toggle-class="nav-link-custom"
         right
       >
-        <b-dropdown-item @click="signOut()">Sign out</b-dropdown-item>
+        <b-dropdown-item @click="signOut()">{{ $t('actions.sign_out') }}</b-dropdown-item>
       </b-nav-dropdown>
     </b-nav>
   </div>

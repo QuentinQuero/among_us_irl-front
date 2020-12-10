@@ -16,6 +16,7 @@ Vue.use(IconsPlugin);
 import onlineLayout from "@/layouts/online";
 import offlineLayout from "@/layouts/offline";
 import VueTable from "vuetable-2";
+import i18n from './i18n'
 
 Vue.component('online-layout', onlineLayout);
 Vue.component('offline-layout', offlineLayout);
@@ -23,6 +24,8 @@ Vue.component('offline-layout', offlineLayout);
 new Vue({
   render: h => h(App),
   router,
+  i18n,
+
   components: {
     'vuetable-pagination': VueTable.VuetablePagination
   }

@@ -2,7 +2,7 @@
   <div>
     <b-card
       border-variant="primary"
-      header="Create a Game"
+      :header="$t('forms.games.create')"
       header-bg-variant="primary"
       header-text-variant="white"
     >
@@ -11,7 +11,7 @@
           <!-- Game accessCode -->
           <b-form-group
             id="accessCode-group"
-            label="Game access Code"
+            :label="$t('forms.games.access_code')"
             label-for="accessCode-input"
           >
             <b-form-input
@@ -19,13 +19,13 @@
                 v-model="accessCode"
                 type="text"
                 required
-                placeholder="Enter game access code"
+                :placeholder="$t('placeholders.game_access_code')"
             ></b-form-input>
           </b-form-group>
           <!-- Game configurations -->
           <b-form-group
               id="configuration-group"
-              label="Game configuration"
+              :label="$t('forms.games.configuration')"
               label-for="configuration-select"
           >
             <b-form-select
@@ -43,8 +43,8 @@
         </b-form>
       </b-card-body>
       <b-card-footer class="row justify-content-between">
-        <b-button variant="danger" v-on:click="cancel">Cancel</b-button>
-        <b-button variant="primary" v-on:click="create">Create</b-button>
+        <b-button variant="danger" v-on:click="cancel">{{ $t('actions.cancel') }}</b-button>
+        <b-button variant="primary" v-on:click="create">{{ $t('actions.create') }}</b-button>
       </b-card-footer>
     </b-card>
   </div>
