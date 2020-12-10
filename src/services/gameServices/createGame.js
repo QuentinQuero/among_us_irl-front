@@ -8,7 +8,7 @@ const createGame = function (gameAccessCode, configurationId) {
         axios({
             method: 'post',
             headers: {
-                authorization: 'Bearer ' + localStorage.getItem('jwt')
+                authorization: 'Bearer ' + sessionStorage.getItem('jwt')
             },
             url: `${config.backUrl}/games/create`,
             data: {

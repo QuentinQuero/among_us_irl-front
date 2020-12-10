@@ -78,12 +78,12 @@ export default {
         // Test if user send good credential
         if (response.status === 'success') {
           // Set in localStorage the token
-          localStorage.setItem('jwt', response.jwt);
-          localStorage.setItem('userRole', response.user.role);
+          sessionStorage.setItem('jwt', response.jwt);
+          sessionStorage.setItem('userRole', response.user.role);
           this.$router.push('/home')
         } else {
           // Show the error
-          localStorage.removeItem('jwt');
+          sessionStorage.removeItem('jwt');
           this.dismissCountDown = this.dismissSecs;
         }
       })

@@ -8,7 +8,7 @@ const getConfigurationsForSelect = function () {
         axios({
             method: 'get',
             headers: {
-                authorization: 'Bearer ' + localStorage.getItem('jwt')
+                authorization: 'Bearer ' + sessionStorage.getItem('jwt')
             },
             url: `${config.backUrl}/configurations/forSelect`
         }).then((response) => {
